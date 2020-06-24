@@ -1,0 +1,100 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 70px;
+    position: relative;
+    margin-bottom: 60px;
+
+    &__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__user-block {
+        display: flex;
+        align-items: center;
+    }
+
+    &__num {
+        @include font(1.4rem, 800, var(--color-white));
+        font-family: sans-medium;
+        cursor: pointer;
+    }
+
+    &__lang {
+        @extend .header__num;
+        text-transform: uppercase;
+        margin-left: 8px;
+
+        &--disabled {
+            opacity: .3;
+            margin-left: 60px;
+        }
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        list-style: none;
+    }
+
+    &__list-item {
+        margin-right: 40px;
+    }
+
+    &__link {
+        @include font(1.4rem, 800, var(--color-white));
+        font-family: sans-medium;
+        text-decoration: none;
+    }
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    cursor: pointer;
+
+    &__item {
+        background-color: var(--color-white);
+        height: 2px;
+        width: 30px;
+        position: relative;
+
+        &--center {
+            margin: 5px 0;
+        }
+    }
+}
+
+.cart {
+    position: relative;
+
+    &::after {
+        content: url('../img/circle.svg');
+        position: absolute;
+        left: 80px;
+        bottom: 17px;
+    }
+
+    &__img {
+        margin-left: 60px;
+    }
+
+    &__counter {
+        @include font(1.2rem, 800, var(--color-red));
+        font-family: sans-medium;
+        position: absolute;
+        bottom: 25px;
+
+        
+    }
+}

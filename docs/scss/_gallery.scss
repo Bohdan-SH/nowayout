@@ -1,0 +1,121 @@
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+.hero {
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 800px;
+    max-width: 350px;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.74%, rgba(17, 13, 13, 0.9) 100%);
+    }
+
+    &--vinci {
+        background: url('../img/vinci.png') no-repeat 50% 50%;
+    }
+
+    &--belvedere {
+        background: url('../img/belvedere.png') no-repeat 50% 50%;
+        position: relative;
+    }
+
+    &--magic {
+        background: url('../img/magic.png') no-repeat 50% 50%;
+    }
+
+    &--unknown {
+        background: url('../img/unknown.png') no-repeat 50% 50%;
+    }
+
+    &--nun {
+        background: url('../img/nun.png') no-repeat 50% 50%;
+    }
+
+    &--active {
+        border: 1px solid var(--color-red);
+    }
+
+    &:hover {
+        border: 1px solid var(--color-red);
+    }
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0 60px 50px;
+    }
+
+    &__text-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 80px;
+    }
+
+    &__caption  {
+        @include font(3.6rem, 800, var(--color-white));
+        font-family: sans-medium;
+        z-index: 1000;
+    }
+
+    &__text {
+        @include font(1.4rem, 250, var(--color-white));
+        font-family: sans-light;
+        z-index: 100;
+    }
+
+    &__img {
+        z-index: 100;
+    }
+}
+
+.cta {
+    display: flex;
+    background: url('../img/tape.png') no-repeat 50% 50%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-size: cover;
+    width: 105%;
+    position: absolute;
+    left: -7px;
+    top: 20px;
+
+    &__caption {
+        @include font(5.6rem, 800, var(--color-white));
+        font-family: morganite;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__text {
+        @include font(1.4rem, 250, var(--color-white));
+        font-family: sans-light;
+    }
+
+    &__time {
+        @include font(1.8rem, 900, var(--color-white));
+        font-family: sans-bold;
+    }
+}
